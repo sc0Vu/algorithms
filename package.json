@@ -1,0 +1,22 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "Algorithms practices",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sc0Vu/algorithms.git"
+  },
+  "keywords": [
+    "algorithms"
+  ],
+  "author": "sc0Vu <alk03073135@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sc0Vu/algorithms/issues"
+  },
+  "homepage": "https://github.com/sc0Vu/algorithms#readme"
+}
