@@ -4,16 +4,17 @@ var path = require('path')
 fs.readdir(__dirname)
   .then((files) => {
     function runTest(directory) {
+      console.log(`Start to run test ${directory}`)
       try {
         require(path.join(__dirname, directory, 'test.js'))
       } catch(e) {
         console.log(`Run test ${directory} error: ${e.message}`)
       }
     }
+
     files = files.filter((file) => {
       return (file !== 'node_modules' && !/^\.(.*)$/.test(file.trim()))
     })
-
     files.forEach(async (file) => {
       try {
         var stats = await fs.stat(file)
