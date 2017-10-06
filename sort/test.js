@@ -21,3 +21,13 @@ tape('Test insertion sort', (t) => {
     st.end()
   })
 })
+
+tape('Test bubble sort', (t) => {
+  var bubbleSort = require('./bubblesort')
+
+  t.test('sort [44,66,1,34,56]', (st) => {
+    var ans = bubbleSort(target)
+    st.deepEquals(ans, sorted)
+    st.end()
+  })
+})
