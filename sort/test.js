@@ -41,3 +41,15 @@ tape('Test quick sort', (t) => {
     st.end()
   })
 })
+
+tape('Test count inversions', (t) => {
+  var countInversions = require('./countinversions')
+  t.test('count inversions [44,66,1,34,56]', (st) => {
+    var ans = countInversions(target)
+    st.equals(ans , 0)
+
+    var ans = countInversions([2, 4, 1, 3, 5])
+    st.equals(ans, 3)
+    st.end()
+  })
+})
