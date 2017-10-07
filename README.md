@@ -4,6 +4,17 @@ It's practices for algorithms written in javascript and test on nodejs.
 ### bignumber
 The simple bignumber implementation.
 
+### sort
+The sort algorithms.
+
+* insertions sort
+
+* bubble sort
+
+* merge sort
+
+* quick sort
+
 # Test
 1. Run all test
 ```
