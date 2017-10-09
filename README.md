@@ -1,4 +1,6 @@
 # Algorithms
+[![Build Status](https://travis-ci.org/sc0Vu/algorithms.svg?branch=master)](https://travis-ci.org/sc0Vu/algorithms)
+
 It's practices for algorithms written in javascript and test on nodejs.
 
 ### bignumber
