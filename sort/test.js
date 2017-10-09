@@ -66,10 +66,16 @@ tape('Test count inversions', (t) => {
   })
 
   // it will take long time to execute
+  // we should change string to number
+  // if we don't change type
+  // the test will always fail
   // t.test('integerArray.txt', async (st) => {
   //   try {
   //     var contentBuffer = await fs.readFile(path.join(__dirname, 'integerArray.txt'))
-  //     var target = contentBuffer.toString().split('\n')
+  //     var target = contentBuffer.toString().split('\n').map((number) => {
+  //       return parseInt(number, 10)
+  //     })
+
   //     st.equals(countInversions(target), 2407905288)
   //   } catch (error) {
   //     console.log(error.message)
@@ -99,10 +105,16 @@ tape('Test count inversions by merge', (t) => {
     st.end()
   })
 
+  // we should change string to number
+  // if we don't change type
+  // the test will always fail
   t.test('integerArray.txt', async (st) => {
     try {
       var contentBuffer = await fs.readFile(path.join(__dirname, 'integerArray.txt'))
-      var target = contentBuffer.toString().split('\n')
+      var target = contentBuffer.toString().split('\n').map((number) => {
+        return parseInt(number, 10)
+      })
+
       st.equals(countInversions(target), 2407905288)
     } catch (error) {
       console.log(error.message)
