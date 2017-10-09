@@ -15,6 +15,8 @@ The sort algorithms.
 
 * quick sort
 
+* count inversions
+
 # Test
 1. Run all test
 ```
