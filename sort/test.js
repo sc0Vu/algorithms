@@ -64,6 +64,18 @@ tape('Test count inversions', (t) => {
     st.equals(ans, 4)
     st.end()
   })
+
+  // it will take long time to execute
+  // t.test('integerArray.txt', async (st) => {
+  //   try {
+  //     var contentBuffer = await fs.readFile(path.join(__dirname, 'integerArray.txt'))
+  //     var target = contentBuffer.toString().split('\n')
+  //     st.equals(countInversions(target), 2407905288)
+  //   } catch (error) {
+  //     console.log(error.message)
+  //   }
+  //   st.end()
+  // })
 })
 
 tape('Test count inversions by merge', (t) => {
@@ -84,6 +96,17 @@ tape('Test count inversions by merge', (t) => {
   t.test('count inversions [2,1,3,1,2]', (st) => {
     var ans = countInversions([2, 1, 3, 1, 2])
     st.equals(ans, 4)
+    st.end()
+  })
+
+  t.test('integerArray.txt', async (st) => {
+    try {
+      var contentBuffer = await fs.readFile(path.join(__dirname, 'integerArray.txt'))
+      var target = contentBuffer.toString().split('\n')
+      st.equals(countInversions(target), 2407905288)
+    } catch (error) {
+      console.log(error.message)
+    }
     st.end()
   })
 })
