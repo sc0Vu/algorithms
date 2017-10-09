@@ -4,12 +4,20 @@ module.exports = exports = function (target) {
     var leftIndex = 0
     var rightIndex = 0
 
-    while (leftPart.length > 0 && rightPart.length > 0) {
-      if (leftPart[0] > rightPart[0]) {
-        count += leftPart.length
-        rightPart.shift()
+    for (var i=data.length; i>0; i--) {
+      if (leftIndex === leftPart.length) {
+        data[leftIndex + rightIndex] = rightPart[rightIndex]
+        rightIndex += 1
+      } else if (rightIndex === rightPart.length) {
+        data[leftIndex + rightIndex] = leftPart[leftIndex]
+        leftIndex += 1
+      } else if (leftPart[leftIndex] > rightPart[rightIndex]) {
+        data[leftIndex + rightIndex] = rightPart[rightIndex]
+        rightIndex += 1
+        count += leftPart.length - leftIndex
       } else {
-        leftPart.shift()
+        data[leftIndex + rightIndex] = leftPart[leftIndex]
+        leftIndex += 1
       }
     }
     return count

@@ -1,4 +1,6 @@
 var tape = require('tape')
+var fs = require('fs-extra')
+var path = require('path')
 var target = [44,66,1,34,56]
 var sorted = [1,34,44,56,66]
 
@@ -44,24 +46,44 @@ tape('Test quick sort', (t) => {
 
 tape('Test count inversions', (t) => {
   var countInversions = require('./countinversions')
+
   t.test('count inversions [44,66,1,34,56]', (st) => {
     var ans = countInversions(target)
     st.equals(ans , 0)
+    st.end()
+  })
 
+  t.test('count inversions [2,4,1,3,5]', (st) => {
     var ans = countInversions([2, 4, 1, 3, 5])
     st.equals(ans, 3)
+    st.end()
+  })
+
+  t.test('count inversions [2,1,3,1,2]', (st) => {
+    var ans = countInversions([2, 1, 3, 1, 2])
+    st.equals(ans, 4)
     st.end()
   })
 })
 
 tape('Test count inversions by merge', (t) => {
   var countInversions = require('./countinversionsbymerge')
+
   t.test('count inversions [44,66,1,34,56]', (st) => {
     var ans = countInversions(target)
     st.equals(ans , 0)
+    st.end()
+  })
 
+  t.test('count inversions [2,4,1,3,5]', (st) => {
     var ans = countInversions([2, 4, 1, 3, 5])
     st.equals(ans, 3)
+    st.end()
+  })
+
+  t.test('count inversions [2,1,3,1,2]', (st) => {
+    var ans = countInversions([2, 1, 3, 1, 2])
+    st.equals(ans, 4)
     st.end()
   })
 })
