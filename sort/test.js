@@ -85,7 +85,7 @@ tape('Test count inversions', (t) => {
 })
 
 tape('Test count inversions by merge', (t) => {
-  var countInversions = require('./countinversionsbymerge')
+  var countInversions = require('./countInversionsbymerge')
 
   t.test('count inversions [44,66,1,34,56]', (st) => {
     var ans = countInversions(target)
