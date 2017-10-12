@@ -122,3 +122,28 @@ tape('Test count inversions by merge', (t) => {
     st.end()
   })
 })
+
+tape('Test randomized select', (t) => {
+  var randomizedSelect = require('./randomizedSelect')
+
+  t.test('randomized select [14, 11, 25, 17, 17, 14, 14, 3, 19, 12] 0', (st) => {
+    var ans = randomizedSelect([14, 11, 25, 17, 17, 14, 14, 3, 19, 12], 0)
+
+    st.equals(ans, 3)
+    st.end()
+  })
+
+  t.test('randomized select [4, 1, 4, 9, 22, 25, 10, 19, 6, 23] 8', (st) => {
+    var ans = randomizedSelect([4, 1, 4, 9, 22, 25, 10, 19, 6, 23], 8)
+
+    st.equals(ans, 23)
+    st.end()
+  })
+
+  t.test('randomized select [16, 6, 9, 20, 15, 21, 5, 21, 6, 26] 9', (st) => {
+    var ans = randomizedSelect([16, 6, 9, 20, 15, 21, 5, 21, 6, 26], 9)
+
+    st.equals(ans, 26)
+    st.end()
+  })
+})
