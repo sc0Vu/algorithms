@@ -102,6 +102,62 @@ tape('Test quick sort', (t) => {
   })
 })
 
+// we should change string to number
+// if we don't change type
+// the test will always fail
+tape('Test quick sort count', async (t) => {
+  var contentBuffer = await fs.readFile(path.join(__dirname, 'quickSort.txt'))
+  var quick = require('./quicksortcount')
+
+  t.test('sort count quickSort.txt, pivot is left', (st) => {
+    // due to the target will sort after quick sort
+    // so we need to reload target each test
+    var target = contentBuffer.toString().split('\n').map((number) => {
+      return parseInt(number, 10)
+    })
+    var leftQuick = new quick(0)
+
+    st.equals(leftQuick.count, 0)
+
+    leftQuick.quickSort(target, 0, target.length-1)
+
+    st.equals(leftQuick.count, 162085)
+    st.end()
+  })
+
+  t.test('sort count quickSort.txt, pivot is right', (st) => {
+    // due to the target will sort after quick sort
+    // so we need to reload target each test
+    var target = contentBuffer.toString().split('\n').map((number) => {
+      return parseInt(number, 10)
+    })
+    var rightQuick = new quick(1)
+
+    st.equals(rightQuick.count, 0)
+
+    rightQuick.quickSort(target, 0, target.length-1)
+
+    st.equals(rightQuick.count, 164123)
+    st.end()
+  })
+
+  t.test('sort count quickSort.txt, pivot is median of median', (st) => {
+    // due to the target will sort after quick sort
+    // so we need to reload target each test
+    var target = contentBuffer.toString().split('\n').map((number) => {
+      return parseInt(number, 10)
+    })
+    var medianQuick = new quick(2)
+
+    st.equals(medianQuick.count, 0)
+
+    medianQuick.quickSort(target, 0, target.length-1)
+
+    st.equals(medianQuick.count, 138382)
+    st.end()
+  })
+})
+
 tape('Test count inversions', (t) => {
   var countInversions = require('./countinversions')
 
