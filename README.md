@@ -17,6 +17,8 @@ The sort algorithms.
 
 * quick sort
 
+* quick sort comparison count
+
 * count inversions
 
 # Test
